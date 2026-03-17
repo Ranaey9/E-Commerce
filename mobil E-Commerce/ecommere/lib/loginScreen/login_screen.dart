@@ -183,9 +183,7 @@ class _LoginScreenState extends State<LoginScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: InkWell(
                 onTap: loginButton,
-                borderRadius: BorderRadius.circular(
-                  15,
-                ), 
+                borderRadius: BorderRadius.circular(15),
                 child: Container(
                   height: 55,
                   decoration: BoxDecoration(
@@ -206,7 +204,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
             const SizedBox(height: 20),
-            // OR 
+            // OR
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: Row(
