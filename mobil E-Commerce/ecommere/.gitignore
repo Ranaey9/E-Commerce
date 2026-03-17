@@ -1,0 +1,44 @@
+# Misc
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# VS Code
+.vscode/settings.json
+
+# Flutter
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+coverage/
+
+# Generated
+**/ios/Flutter/.last_build_id
+
+# Android build
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# Secrets
+.env
+.env.local
+key.properties
+*.jks
+*.keystore
+
+# Firebase
+ios/Runner/GoogleService-Info.plist
+android/app/google-services.json
