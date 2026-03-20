@@ -19,7 +19,9 @@ class _LoginScreenState extends State<LoginScreen> {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text("Please enter your email and password.")),
       );
-    } else {}
+    } else {
+      Navigator.pushNamed(context, '/home');
+    }
   }
 
   @override
@@ -38,7 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 // appar
                 Container(
                   width: double.infinity,
-                  height: screenHeight * 0.15,
+                  height: screenHeight * 0.13,
                   decoration: const BoxDecoration(
                     color: Color(0xFF2B2E81),
                     borderRadius: BorderRadius.only(
@@ -49,7 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 // Logo
                 Positioned(
-                  top: screenHeight * 0.15,
+                  top: screenHeight * 0.13,
                   child: Center(
                     child: Image.asset(
                       "assets/images/logo.png",
@@ -66,7 +68,7 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Column(
                 children: [
                   const Text(
-                    "",
+                    "Shop-Store",
                     style: TextStyle(
                       fontSize: 26,
                       fontWeight: FontWeight.bold,
@@ -77,11 +79,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 40),
             // E-mail
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: TextField(
+                keyboardType: TextInputType.emailAddress,
+                textInputAction: TextInputAction.next,
                 controller: _emailController,
                 cursorColor: const Color(0xFF2B2E81),
                 decoration: InputDecoration(
@@ -119,6 +123,7 @@ class _LoginScreenState extends State<LoginScreen> {
               child: TextField(
                 controller: _passwordController,
                 obscureText: _isObscured,
+                textInputAction: TextInputAction.done,
                 cursorColor: const Color(0xFF2B2E81),
                 decoration: InputDecoration(
                   labelText: "Password",
@@ -164,7 +169,9 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Align(
                 alignment: Alignment.centerRight,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/forgot-password');
+                  },
                   style: TextButton.styleFrom(minimumSize: const Size(0, 0)),
                   child: const Text(
                     "Forgot Password?",
@@ -233,29 +240,34 @@ class _LoginScreenState extends State<LoginScreen> {
             // Google text
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
-              child: Container(
-                height: 55,
-                decoration: BoxDecoration(
-                  color: const Color(0xFFF5F5F7),
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.network(
-                      'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1200px-Google_%22G%22_logo.svg.png',
-                      height: 24,
-                    ),
-                    const SizedBox(width: 10),
-                    const Text(
-                      "Continue with Google",
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                        color: Color(0xFF2B2E81),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, '/googleScreen');
+                },
+                child: Container(
+                  height: 55,
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFF5F5F7),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.network(
+                        'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1200px-Google_%22G%22_logo.svg.png',
+                        height: 24,
                       ),
-                    ),
-                  ],
+                      const SizedBox(width: 10),
+                      const Text(
+                        "Continue with Google",
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xFF2B2E81),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -264,6 +276,10 @@ class _LoginScreenState extends State<LoginScreen> {
             // Apple text
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, '/AppleScreen');
+                },
               child: Container(
                 height: 55,
                 decoration: BoxDecoration(
@@ -286,6 +302,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ],
                 ),
               ),
+              ),
             ),
             const SizedBox(height: 20),
             // sign up
@@ -297,7 +314,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   style: TextStyle(color: Colors.grey),
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/signup');
+                  },
                   child: const Text(
                     "Sign Up",
                     style: TextStyle(
