@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class CartService implements ICartService {
@@ -29,6 +30,11 @@ public class CartService implements ICartService {
 
     @Override
     public void addProductToCart(Long userid, dtoCartItem cartItemdto) {
+
+        if (cartItemdto.getQuantity() <= 0) {
+            throw new RuntimeException("Ürün adedi 0 veya negatif olamaz");
+        }
+
         Cart cart = cartRepository.findByUserId(userid);
         if (cart==null){
             Cart newCart = new Cart();
@@ -41,19 +47,26 @@ public class CartService implements ICartService {
             cartRepository.save(newCart);
             cart = newCart;
         }
-        CartItem cartItem = new CartItem();
 
         Product product = producRepository.findById(cartItemdto.getProductid())
                 .orElseThrow(() -> new RuntimeException("Ürün bulunamadı"));
 
+        if (cartItemdto.getQuantity()>product.getStock()){
+            throw new RuntimeException("Stok yeterli değil");
+        }
+
         for (CartItem item : cart.getItems()) {
             if (item.getProduct().getId().equals(product.getId())){
-                item.setQuantity(cartItemdto.getQuantity() + item.getQuantity());
+                int newQuantity = item.getQuantity() + cartItemdto.getQuantity();
+                if (newQuantity>product.getStock()){
+                    throw new RuntimeException("Stok yeterli değil");
+                }
+                item.setQuantity(newQuantity);
                 cartRepository.save(cart);
                 return;
             }
         }
-
+        CartItem cartItem = new CartItem();
         cartItem.setProduct(product);
         cartItem.setCart(cart);
         cartItem.setQuantity(cartItemdto.getQuantity());
@@ -61,6 +74,30 @@ public class CartService implements ICartService {
         cart.getItems().add(cartItem);
 
         cartRepository.save(cart);
-        return ;
+    }
+
+    @Override
+    public void removeProductFromCart(Long userid, dtoCartItem cartItemdto) {
+        User user = userRepository.findById(userid)
+                .orElseThrow(() -> new RuntimeException("Kullanıcı bulunamadı"));
+
+        Cart cart = cartRepository.findById(user.getCart().getId())
+                .orElseThrow(() -> new RuntimeException("sepet bulunamadı"));
+
+        for (CartItem item : cart.getItems()) {
+            if (item.getProduct().getId().equals(cartItemdto.getProductid())) {
+                int newquantity = item.getQuantity() - cartItemdto.getQuantity();
+                if (newquantity < 0) {
+                    throw new RuntimeException("Ürün sayısı negatif olamaz");
+                } else if (newquantity == 0) {
+                    cart.getItems().remove(item);
+                } else {
+                    item.setQuantity(newquantity);
+                }
+                cartRepository.save(cart);
+                return;
+            }
+        }
+        throw new RuntimeException("Sepette bu ürüne ait kayıt bulunamadı");
     }
 }

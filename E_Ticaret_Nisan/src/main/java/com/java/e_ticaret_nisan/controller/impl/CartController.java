@@ -20,6 +20,13 @@ public class CartController implements ICartController {
     public void addProdactToCart(@RequestParam Long userid,
                                  @RequestBody @Valid dtoCartItem cartItem) {
         cartService.addProductToCart(userid,cartItem);
-        return;
     }
+
+    @Override
+    @DeleteMapping("/deletProduct")
+    public void removeProdactFromCart(@RequestParam Long userid,
+                                      @RequestBody @Valid dtoCartItem cartItem) {
+        cartService.removeProductFromCart(userid,cartItem);
+    }
+
 }
