@@ -1,0 +1,52 @@
+# --- GENEL VE MAC ÖZEL ---
+.DS_Store
+.apple_desktop
+.history
+*.log
+*.swp
+
+# --- IDE (VS CODE & INTELLIJ) ---
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.history/
+
+# --- FLUTTER / DART / PUB ---
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+build/
+/build/
+**/build/
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# --- IOS ÖZEL (M4 MAC İÇİN ÖNEMLİ) ---
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Generated.xcconfig
+ios/Flutter/flutter_export_environment.sh
+ios/Flutter/App.framework
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+Podfile.lock
+
+# --- ANDROID ÖZEL ---
+android/.gradle/
+android/local.properties
+android/app/debug/
+android/app/profile/
+android/app/release/
+gen/
+
+# --- WEB / WINDOWS ---
+build/web/
+build/windows/
+
+# --- DİĞER ---
+/coverage/
+app.*.symbols
+app.*.map.json
