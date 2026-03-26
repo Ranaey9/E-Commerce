@@ -1,0 +1,8 @@
+
+
+SEPET
+    +addProductToCart (eğer seğet yoksa ürün eklerken sepeti de oluşturuyor)
+    +removeProductFromCart (stok kontrolüyle)
+    -getCartByUserId (Sepetteki ürünleri liste olarak dön)
+    -getCartTotalPrice (sepetteki toplar ürün fiyatı)
+    -clearCart (sipariş tamamlandığında yada bütün sepet temizlenmek istendiğinde)

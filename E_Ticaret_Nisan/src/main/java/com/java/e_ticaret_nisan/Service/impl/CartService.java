@@ -6,10 +6,12 @@ import com.java.e_ticaret_nisan.entitiy.CartItem;
 import com.java.e_ticaret_nisan.entitiy.Product;
 import com.java.e_ticaret_nisan.entitiy.User;
 import com.java.e_ticaret_nisan.entitiy.dto.dtoCartItem;
+import com.java.e_ticaret_nisan.entitiy.dto.dtoProductForAll;
 import com.java.e_ticaret_nisan.repository.ICartRepository;
 import com.java.e_ticaret_nisan.repository.ICartitemRepository;
 import com.java.e_ticaret_nisan.repository.IProcductRepository;
 import com.java.e_ticaret_nisan.repository.IUserRepository;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -99,5 +101,39 @@ public class CartService implements ICartService {
             }
         }
         throw new RuntimeException("Sepette bu ürüne ait kayıt bulunamadı");
+    }
+
+    @Override
+    public List<dtoProductForAll> getCartByUserId(Long userid) {
+
+        User user = userRepository.findById(userid)
+                .orElseThrow(()-> new RuntimeException("Kullanıcı bulunamadı"));
+        List<dtoProductForAll> dtoProductlist = new ArrayList<>();
+        List<CartItem> liste = user.getCart().getItems();
+        if (liste==null && liste.isEmpty()){
+            throw new RuntimeException("Sepet Bulunamadı/Sepet Boş");
+        }
+        for (CartItem item : liste) {
+            dtoProductForAll dtoProduct = new dtoProductForAll();
+            BeanUtils.copyProperties(item.getProduct(), dtoProduct);
+            dtoProduct.setQuantity(item.getQuantity());
+            dtoProduct.setTotalPrice(item.getQuantity() * item.getProduct().getPrice());
+            dtoProductlist.add(dtoProduct);
+        }
+
+        return dtoProductlist;
+    }
+
+    @Override
+    public double getCartTotalPrice(Long userid) {
+        User user = userRepository.findById(userid)
+                .orElseThrow(()-> new RuntimeException("Kullanıcı bulunamadı"));
+        List<dtoProductForAll> dtoProductlist = new ArrayList<>();
+        List<CartItem> liste = user.getCart().getItems();
+        double totalPrice = 0;
+        for (CartItem item : liste) {
+            totalPrice += item.getQuantity() * item.getProduct().getPrice();
+        }
+        return totalPrice;
     }
 }
