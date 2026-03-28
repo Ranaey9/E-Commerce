@@ -1,5 +1,4 @@
 import 'package:e_ticaret/loginScreen/Apple_screen.dart';
-import 'package:e_ticaret/loginScreen/ForgotPasswords_screen.dart';
 import 'package:e_ticaret/loginScreen/google_screen.dart';
 import 'package:e_ticaret/loginScreen/login_screen.dart';
 import 'package:e_ticaret/loginScreen/signUp_screen.dart';
@@ -21,7 +20,6 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const LoginScreen(),
         '/signup': (context) => const SignUpScreen(),
-        '/forgot-password': (context) => const ForgotPasswordScreen(),
         '/googleScreen': (context) => const googleScreen(),
         '/AppleScreen': (context) => const AppleScreen(),
       },
