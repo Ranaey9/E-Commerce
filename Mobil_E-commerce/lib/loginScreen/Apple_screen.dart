@@ -57,9 +57,9 @@ class _AppleScreenState extends State<AppleScreen> {
                     Icon(Icons.apple, color: Colors.white, size: 28),
                     SizedBox(width: 12),
                     Text(
-                      "Continue with Apple",
+                      "Continue with Apple ",
                       style: TextStyle(
-                        color: Colors.white,
+                        color: Colors.white, 
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
                       ),
