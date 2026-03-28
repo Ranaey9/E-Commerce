@@ -70,7 +70,9 @@ class _AppleScreenState extends State<AppleScreen> {
             ),
             const SizedBox(height: 20),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, '/signup');
+              },
               child: const Text(
                 "Create account",
                 style: TextStyle(color: Colors.blueAccent),

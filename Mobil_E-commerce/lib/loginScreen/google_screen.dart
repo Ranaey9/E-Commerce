@@ -46,7 +46,7 @@ class _GoogleScreenState extends State<GoogleScreen> {
             const SizedBox(height: 40),
             OutlinedButton(
               onPressed: () {
-                
+
               },
               style: OutlinedButton.styleFrom(
                 side: const BorderSide(color: Colors.grey),
@@ -80,7 +80,9 @@ class _GoogleScreenState extends State<GoogleScreen> {
             ),
             const SizedBox(height: 20),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, '/signup');
+              },
               child: const Text(
                 "Create account",
                 style: TextStyle(color: Colors.blueAccent),
