@@ -1,15 +1,92 @@
 import 'package:flutter/material.dart';
 
-class googleScreen extends StatefulWidget {
-  const googleScreen({super.key});
+class GoogleScreen extends StatefulWidget {
+  const GoogleScreen({super.key});
 
   @override
-  State<googleScreen> createState() => _googleScreenState();
+  State<GoogleScreen> createState() => _GoogleScreenState();
 }
 
-class _googleScreenState extends State<googleScreen> {
+class _GoogleScreenState extends State<GoogleScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.black),
+          onPressed: () => Navigator.pop(context),
+        ),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 30),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.network(
+              'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1200px-Google_%22G%22_logo.svg.png',
+              height: 60,
+            ),
+            const SizedBox(height: 20),
+            const Text(
+              "Sign In",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Colors.black87,
+              ),
+            ),
+            const SizedBox(height: 10),
+            const Text(
+              "Use your Google Account",
+              style: TextStyle(fontSize: 16, color: Colors.black54),
+            ),
+            const SizedBox(height: 40),
+            OutlinedButton(
+              onPressed: () {},
+              style: OutlinedButton.styleFrom(
+                side: const BorderSide(color: Colors.grey),
+                padding: const EdgeInsets.symmetric(
+                  vertical: 12,
+                  horizontal: 16,
+                ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.network(
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1200px-Google_%22G%22_logo.svg.png',
+  height: 24,
+  width: 24,
+),
+                  const SizedBox(width: 12),
+                  const Text(
+                    "Continue with Google",
+                    style: TextStyle(
+                      color: Colors.black87,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 20),
+            TextButton(
+              onPressed: () {},
+              child: const Text(
+                "Create account",
+                style: TextStyle(color: Colors.blueAccent),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

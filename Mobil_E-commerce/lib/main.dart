@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const LoginScreen(),
         '/signup': (context) => const SignUpScreen(),
-        '/googleScreen': (context) => const googleScreen(),
+        '/googleScreen': (context) => const GoogleScreen(),
         '/AppleScreen': (context) => const AppleScreen(),
       },
     );
