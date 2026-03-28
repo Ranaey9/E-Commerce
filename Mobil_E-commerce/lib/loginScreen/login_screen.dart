@@ -163,28 +163,6 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
             const SizedBox(height: 10),
-            // forgot password
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25.0),
-              child: Align(
-                alignment: Alignment.centerRight,
-                child: TextButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/forgot-password');
-                  },
-                  style: TextButton.styleFrom(minimumSize: const Size(0, 0)),
-                  child: const Text(
-                    "Forgot Password?",
-                    style: TextStyle(
-                      color: Color(0xFF2B2E81),
-                      fontWeight: FontWeight.w600,
-                      fontSize: 14,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            const SizedBox(height: 20),
             // Login Button
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -280,28 +258,28 @@ class _LoginScreenState extends State<LoginScreen> {
                 onTap: () {
                   Navigator.pushNamed(context, '/AppleScreen');
                 },
-              child: Container(
-                height: 55,
-                decoration: BoxDecoration(
-                  color: const Color(0xFFF5F5F7),
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Icon(Icons.apple, size: 28, color: Colors.black),
-                    const SizedBox(width: 10),
-                    const Text(
-                      "Continue with Apple",
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                        color: Color(0xFF2B2E81),
+                child: Container(
+                  height: 55,
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFF5F5F7),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Icon(Icons.apple, size: 28, color: Colors.black),
+                      const SizedBox(width: 10),
+                      const Text(
+                        "Continue with Apple",
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xFF2B2E81),
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
               ),
             ),
             const SizedBox(height: 20),
