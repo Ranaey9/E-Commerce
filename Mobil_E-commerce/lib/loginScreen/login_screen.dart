@@ -20,7 +20,7 @@ class _LoginScreenState extends State<LoginScreen> {
         const SnackBar(content: Text("Please enter your email and password.")),
       );
     } else {
-      Navigator.pushNamed(context, '/home');
+      Navigator.pushNamed(context, '/HomeScreen');
     }
   }
 
@@ -42,7 +42,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   // Logo
                   Image.asset(
                     "assets/images/logo.png",
-                    width: screenWidth * 0.40, 
+                    width: screenWidth * 0.40,
                     fit: BoxFit.contain,
                   ),
                   const SizedBox(height: 20),
@@ -214,7 +214,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     children: [
                       Image.asset(
                         'assets/images/google_logo.png',
-                        height: 24, 
+                        height: 24,
                         width: 24,
                         fit: BoxFit.contain,
                       ),

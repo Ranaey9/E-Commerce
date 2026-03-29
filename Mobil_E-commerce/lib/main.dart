@@ -1,3 +1,4 @@
+import 'package:e_ticaret/HomeScreen/home_screen.dart';
 import 'package:e_ticaret/loginScreen/Apple_screen.dart';
 import 'package:e_ticaret/loginScreen/google_screen.dart';
 import 'package:e_ticaret/loginScreen/login_screen.dart';
@@ -16,9 +17,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Shop Store',
-      initialRoute: '/',
+      initialRoute: '/LoginScreen',
       routes: {
         '/': (context) => const LoginScreen(),
+        '/HomeScreen': (context) => const HomeScreen(),
         '/signup': (context) => const SignUpScreen(),
         '/googleScreen': (context) => const GoogleScreen(),
         '/AppleScreen': (context) => const AppleScreen(),
