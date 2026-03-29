@@ -33,49 +33,29 @@ class _LoginScreenState extends State<LoginScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Stack(
-              alignment: Alignment.center,
-              clipBehavior: Clip.none,
-              children: [
-                // appar
-                Container(
-                  width: double.infinity,
-                  height: screenHeight * 0.13,
-                  decoration: const BoxDecoration(
-                    color: Color(0xFF2B2E81),
-                    borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(50),
-                      bottomRight: Radius.circular(50),
-                    ),
-                  ),
-                ),
-                // Logo
-                Positioned(
-                  top: screenHeight * 0.13,
-                  child: Center(
-                    child: Image.asset(
-                      "assets/images/logo.png",
-                      width: screenWidth * 0.35,
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: screenWidth * 0.30 + 0.03),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+            Container(
+              height: screenHeight * 0.35,
+              width: double.infinity,
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
+                  // Logo
+                  Image.asset(
+                    "assets/images/logo.png",
+                    width: screenWidth * 0.40, 
+                    fit: BoxFit.contain,
+                  ),
+                  const SizedBox(height: 20),
+                  // Mağaza İsmi
                   const Text(
-                    "Shop-Store",
+                    "Shop Store",
                     style: TextStyle(
-                      fontSize: 26,
+                      fontSize: 25,
                       fontWeight: FontWeight.bold,
                       color: Color(0xFF2B2E81),
-                      letterSpacing: 1.5,
                     ),
                   ),
+                  const SizedBox(height: 10),
                 ],
               ),
             ),
