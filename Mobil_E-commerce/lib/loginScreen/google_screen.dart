@@ -45,9 +45,7 @@ class _GoogleScreenState extends State<GoogleScreen> {
             ),
             const SizedBox(height: 40),
             OutlinedButton(
-              onPressed: () {
-
-              },
+              onPressed: () {},
               style: OutlinedButton.styleFrom(
                 side: const BorderSide(color: Colors.grey),
                 padding: const EdgeInsets.symmetric(
@@ -61,10 +59,11 @@ class _GoogleScreenState extends State<GoogleScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.network( 
-                    'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1200px-Google_%22G%22_logo.svg.png',
+                  Image.asset(
+                    'assets/images/google_logo.png',
                     height: 24,
                     width: 24,
+                    fit: BoxFit.contain,
                   ),
                   const SizedBox(width: 12),
                   const Text(
