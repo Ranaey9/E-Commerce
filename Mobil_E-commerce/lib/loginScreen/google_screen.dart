@@ -11,7 +11,6 @@ class GoogleScreen extends StatefulWidget {
 class _GoogleScreenState extends State<GoogleScreen> {
   @override
   Widget build(BuildContext context) {
-    // Çeviriye erişim noktası
     final l10n = AppLocalizations.of(context)!;
 
     return Scaffold(
@@ -44,7 +43,7 @@ class _GoogleScreenState extends State<GoogleScreen> {
             ),
             const SizedBox(height: 10),
             Text(
-              l10n.useGoogleAccount, 
+              l10n.useGoogleAccount,
               style: const TextStyle(fontSize: 16, color: Colors.black54),
             ),
             const SizedBox(height: 40),
@@ -71,7 +70,7 @@ class _GoogleScreenState extends State<GoogleScreen> {
                   ),
                   const SizedBox(width: 12),
                   Text(
-                    l10n.continueWithGoogle, 
+                    l10n.continueWithGoogle,
                     style: const TextStyle(
                       color: Colors.black87,
                       fontSize: 16,
@@ -87,7 +86,7 @@ class _GoogleScreenState extends State<GoogleScreen> {
                 Navigator.pushNamed(context, '/signup');
               },
               child: Text(
-                l10n.createAccount, 
+                l10n.createAccount,
                 style: const TextStyle(color: Colors.blueAccent),
               ),
             ),
