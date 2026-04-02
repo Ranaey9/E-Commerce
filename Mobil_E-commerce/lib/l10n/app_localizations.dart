@@ -157,6 +157,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Please enter your email and password.'**
   String get errorEmptyFields;
+
+  /// No description provided for @signIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign In'**
+  String get signIn;
+
+  /// No description provided for @useGoogleAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Use your Google Account'**
+  String get useGoogleAccount;
+
+  /// No description provided for @useAppleID.
+  ///
+  /// In en, this message translates to:
+  /// **'Use your Apple ID'**
+  String get useAppleID;
+
+  /// No description provided for @createAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Create account'**
+  String get createAccount;
+
+  /// No description provided for @name.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get name;
+
+  /// No description provided for @surname.
+  ///
+  /// In en, this message translates to:
+  /// **'Surname'**
+  String get surname;
+
+  /// No description provided for @alreadyHaveAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Already have an account?'**
+  String get alreadyHaveAccount;
 }
 
 class _AppLocalizationsDelegate

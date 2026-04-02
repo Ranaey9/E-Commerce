@@ -8,5 +8,12 @@
   "continueWithApple": "Apple ile Devam Et",
   "dontHaveAccount": "Hesabınız yok mu?",
   "signUp": "Kayıt Ol",
-  "errorEmptyFields": "Lütfen e-posta ve şifrenizi giriniz."
+  "errorEmptyFields": "Lütfen e-posta ve şifrenizi giriniz.",
+  "signIn": "Oturum Aç",
+  "useGoogleAccount": "Google Hesabınızı Kullanın",
+  "useAppleID": "Apple ID'nizi Kullanın",
+  "createAccount": "Hesap oluşturun",
+  "name": "Ad",
+  "surname": "Soyad",
+  "alreadyHaveAccount": "Zaten bir hesabınız var mı?"
 }

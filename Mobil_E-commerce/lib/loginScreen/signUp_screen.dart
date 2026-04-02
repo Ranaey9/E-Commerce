@@ -1,3 +1,6 @@
+import 'dart:math';
+
+import 'package:e_commerce/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -19,7 +22,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
-
+    final l10n = AppLocalizations.of(context)!;
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
@@ -61,7 +64,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 controller: nameController,
                 cursorColor: const Color(0xFF2B2E81),
                 decoration: InputDecoration(
-                  labelText: "Name",
+                  labelText: l10n.name,
                   labelStyle: const TextStyle(color: Colors.grey),
                   floatingLabelStyle: const TextStyle(color: Color(0xFF2B2E81)),
                   filled: true,
@@ -93,7 +96,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 controller: surnameController,
                 cursorColor: const Color(0xFF2B2E81),
                 decoration: InputDecoration(
-                  labelText: "Surname",
+                  labelText: l10n.surname,
                   labelStyle: const TextStyle(color: Colors.grey),
                   floatingLabelStyle: const TextStyle(color: Color(0xFF2B2E81)),
                   filled: true,
@@ -127,7 +130,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 controller: _emailController,
                 cursorColor: const Color(0xFF2B2E81),
                 decoration: InputDecoration(
-                  labelText: "E-mail",
+                  labelText: l10n.email,
                   labelStyle: const TextStyle(color: Colors.grey),
                   floatingLabelStyle: const TextStyle(color: Color(0xFF2B2E81)),
                   filled: true,
@@ -160,7 +163,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 textInputAction: TextInputAction.done,
                 cursorColor: const Color(0xFF2B2E81),
                 decoration: InputDecoration(
-                  labelText: "Password",
+                  labelText: l10n.password,
                   labelStyle: const TextStyle(color: Colors.grey),
                   floatingLabelStyle: const TextStyle(color: Color(0xFF2B2E81)),
                   filled: true,
@@ -202,9 +205,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: InkWell(
-                onTap: () {
-                  print("Sign Up clicked");
-                },
+                onTap: () {},
                 borderRadius: BorderRadius.circular(15),
                 child: Container(
                   height: 55,
@@ -212,9 +213,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     color: const Color(0xFF2B2E81),
                     borderRadius: BorderRadius.circular(15),
                   ),
-                  child: const Center(
+                  child: Center(
                     child: Text(
-                      "Sign Up",
+                      l10n.signUp,
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.w600,
@@ -230,16 +231,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text(
-                  "Aleardy have a account?",
+                Text(
+                  l10n.alreadyHaveAccount,
                   style: TextStyle(color: Colors.grey),
                 ),
                 TextButton(
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  child: const Text(
-                    "Login",
+                  child: Text(
+                    l10n.signIn,
                     style: TextStyle(
                       color: Color(0xFF2B2E81),
                       fontWeight: FontWeight.w600,

@@ -8,5 +8,12 @@
   "continueWithApple": "Continue with Apple",
   "dontHaveAccount": "Don't have an account?",
   "signUp": "Sign Up",
-  "errorEmptyFields": "Please enter your email and password."
+  "errorEmptyFields": "Please enter your email and password.",
+  "signIn": "Sign In",
+  "useGoogleAccount": "Use your Google Account",
+  "useAppleID": "Use your Apple ID",
+  "createAccount": "Create account",
+  "name": "Name",
+  "surname": "Surname",
+  "alreadyHaveAccount": "Already have an account?"
 }

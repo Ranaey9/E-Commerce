@@ -37,4 +37,25 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get errorEmptyFields => 'Lütfen e-posta ve şifrenizi giriniz.';
+
+  @override
+  String get signIn => 'Oturum Aç';
+
+  @override
+  String get useGoogleAccount => 'Google Hesabınızı Kullanın';
+
+  @override
+  String get useAppleID => 'Apple ID\'nizi Kullanın';
+
+  @override
+  String get createAccount => 'Hesap oluşturun';
+
+  @override
+  String get name => 'Ad';
+
+  @override
+  String get surname => 'Soyad';
+
+  @override
+  String get alreadyHaveAccount => 'Zaten bir hesabınız var mı?';
 }

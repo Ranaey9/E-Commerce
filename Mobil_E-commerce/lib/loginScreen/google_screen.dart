@@ -1,3 +1,4 @@
+import 'package:e_commerce/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 class GoogleScreen extends StatefulWidget {
@@ -10,6 +11,9 @@ class GoogleScreen extends StatefulWidget {
 class _GoogleScreenState extends State<GoogleScreen> {
   @override
   Widget build(BuildContext context) {
+    // Çeviriye erişim noktası
+    final l10n = AppLocalizations.of(context)!;
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -30,18 +34,18 @@ class _GoogleScreenState extends State<GoogleScreen> {
               height: 60,
             ),
             const SizedBox(height: 20),
-            const Text(
-              "Sign In",
-              style: TextStyle(
+            Text(
+              l10n.signIn,
+              style: const TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
                 color: Colors.black87,
               ),
             ),
             const SizedBox(height: 10),
-            const Text(
-              "Use your Google Account",
-              style: TextStyle(fontSize: 16, color: Colors.black54),
+            Text(
+              l10n.useGoogleAccount, 
+              style: const TextStyle(fontSize: 16, color: Colors.black54),
             ),
             const SizedBox(height: 40),
             OutlinedButton(
@@ -66,9 +70,9 @@ class _GoogleScreenState extends State<GoogleScreen> {
                     fit: BoxFit.contain,
                   ),
                   const SizedBox(width: 12),
-                  const Text(
-                    "Continue with Google",
-                    style: TextStyle(
+                  Text(
+                    l10n.continueWithGoogle, 
+                    style: const TextStyle(
                       color: Colors.black87,
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
@@ -82,9 +86,9 @@ class _GoogleScreenState extends State<GoogleScreen> {
               onPressed: () {
                 Navigator.pushNamed(context, '/signup');
               },
-              child: const Text(
-                "Create account",
-                style: TextStyle(color: Colors.blueAccent),
+              child: Text(
+                l10n.createAccount, 
+                style: const TextStyle(color: Colors.blueAccent),
               ),
             ),
           ],

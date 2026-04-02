@@ -1,3 +1,4 @@
+import 'package:e_commerce/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 class AppleScreen extends StatefulWidget {
@@ -10,6 +11,8 @@ class AppleScreen extends StatefulWidget {
 class _AppleScreenState extends State<AppleScreen> {
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -25,20 +28,20 @@ class _AppleScreenState extends State<AppleScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.apple, size: 60, color: Colors.black),
+            const Icon(Icons.apple, size: 60, color: Colors.black),
             const SizedBox(height: 20),
-            const Text(
-              "Sign In",
-              style: TextStyle(
+            Text(
+              l10n.signIn,
+              style: const TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
                 color: Colors.black87,
               ),
             ),
             const SizedBox(height: 10),
-            const Text(
-              "Use your Apple ID",
-              style: TextStyle(fontSize: 16, color: Colors.black54),
+            Text(
+              l10n.useAppleID,
+              style: const TextStyle(fontSize: 16, color: Colors.black54),
             ),
             const SizedBox(height: 40),
             SizedBox(
@@ -51,15 +54,15 @@ class _AppleScreenState extends State<AppleScreen> {
                     borderRadius: BorderRadius.circular(8),
                   ),
                 ),
-                child: const Row(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.apple, color: Colors.white, size: 28),
-                    SizedBox(width: 12),
+                    const Icon(Icons.apple, color: Colors.white, size: 28),
+                    const SizedBox(width: 12),
                     Text(
-                      "Continue with Apple ",
-                      style: TextStyle(
-                        color: Colors.white, 
+                      l10n.continueWithApple,
+                      style: const TextStyle(
+                        color: Colors.white,
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
                       ),
@@ -73,9 +76,9 @@ class _AppleScreenState extends State<AppleScreen> {
               onPressed: () {
                 Navigator.pushNamed(context, '/signup');
               },
-              child: const Text(
-                "Create account",
-                style: TextStyle(color: Colors.blueAccent),
+              child: Text(
+                l10n.createAccount,
+                style: const TextStyle(color: Colors.blueAccent),
               ),
             ),
           ],

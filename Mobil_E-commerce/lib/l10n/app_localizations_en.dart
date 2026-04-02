@@ -37,4 +37,25 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get errorEmptyFields => 'Please enter your email and password.';
+
+  @override
+  String get signIn => 'Sign In';
+
+  @override
+  String get useGoogleAccount => 'Use your Google Account';
+
+  @override
+  String get useAppleID => 'Use your Apple ID';
+
+  @override
+  String get createAccount => 'Create account';
+
+  @override
+  String get name => 'Name';
+
+  @override
+  String get surname => 'Surname';
+
+  @override
+  String get alreadyHaveAccount => 'Already have an account?';
 }
