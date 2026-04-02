@@ -1,0 +1,12 @@
+{
+  "search": "Ara ...",
+  "login": "Giriş Yap",
+  "email": "E-posta",
+  "password": "Şifre",
+  "or": "VEYA",
+  "continueWithGoogle": "Google ile Devam Et",
+  "continueWithApple": "Apple ile Devam Et",
+  "dontHaveAccount": "Hesabınız yok mu?",
+  "signUp": "Kayıt Ol",
+  "errorEmptyFields": "Lütfen e-posta ve şifrenizi giriniz."
+}

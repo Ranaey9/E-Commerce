@@ -1,4 +1,8 @@
+import 'package:e_commerce/l10n/app_localizations.dart';
+import 'package:e_commerce/language_provider.dart';
 import 'package:flutter/material.dart';
+
+import 'package:provider/provider.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -11,13 +15,14 @@ class _LoginScreenState extends State<LoginScreen> {
   bool _isObscured = true;
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+
   void loginButton() {
     String email = _emailController.text.trim();
     String password = _passwordController.text.trim();
 
     if (email.isEmpty || password.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("Please enter your email and password.")),
+        SnackBar(content: Text(AppLocalizations.of(context)!.errorEmptyFields)),
       );
     } else {
       Navigator.pushNamed(context, '/HomeScreen');
@@ -28,25 +33,49 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
+    final l10n = AppLocalizations.of(context)!;
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        actions: [
+          PopupMenuButton<String>(
+            icon: const Icon(
+              Icons.language,
+              color: Color(0xFF2B2E81),
+              size: 28,
+            ),
+            color: Colors.white,
+            onSelected: (String langCode) {
+              Provider.of<LanguageProvider>(
+                context,
+                listen: false,
+              ).changeLanguage(langCode);
+            },
+            itemBuilder: (BuildContext context) => [
+              const PopupMenuItem(value: 'tr', child: Text("TR")),
+              const PopupMenuItem(value: 'en', child: Text("EN")),
+            ],
+          ),
+          const SizedBox(width: 10),
+        ],
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-              height: screenHeight * 0.35,
+            SizedBox(
+              height: screenHeight * 0.25,
               width: double.infinity,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  // Logo
                   Image.asset(
                     "assets/images/logo.png",
                     width: screenWidth * 0.40,
                     fit: BoxFit.contain,
                   ),
                   const SizedBox(height: 20),
-                  // Mağaza İsmi
                   const Text(
                     "Shop Store",
                     style: TextStyle(
@@ -55,12 +84,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       color: Color(0xFF2B2E81),
                     ),
                   ),
-                  const SizedBox(height: 10),
                 ],
               ),
             ),
-            SizedBox(height: 40),
-            // E-mail
+            const SizedBox(height: 40),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: TextField(
@@ -69,20 +96,16 @@ class _LoginScreenState extends State<LoginScreen> {
                 controller: _emailController,
                 cursorColor: const Color(0xFF2B2E81),
                 decoration: InputDecoration(
-                  labelText: "E-mail",
+                  labelText: l10n.email,
                   labelStyle: const TextStyle(color: Colors.grey),
-                  floatingLabelStyle: const TextStyle(
-                    color: Color(0xFF2B2E81),
-                  ), //e-mail yazısı çıkar
+                  floatingLabelStyle: const TextStyle(color: Color(0xFF2B2E81)),
                   filled: true,
                   fillColor: const Color(0xFFF5F5F7),
                   enabledBorder: OutlineInputBorder(
-                    //tıklanmadığındaki normal kutu
                     borderRadius: BorderRadius.circular(15),
                     borderSide: const BorderSide(color: Colors.transparent),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    //tıklandığında dışındaki çizgi
                     borderRadius: BorderRadius.circular(15),
                     borderSide: const BorderSide(
                       color: Color(0xFF2B2E81),
@@ -97,7 +120,6 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
             const SizedBox(height: 20),
-            // password
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: TextField(
@@ -106,7 +128,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 textInputAction: TextInputAction.done,
                 cursorColor: const Color(0xFF2B2E81),
                 decoration: InputDecoration(
-                  labelText: "Password",
+                  labelText: l10n.password,
                   labelStyle: const TextStyle(color: Colors.grey),
                   floatingLabelStyle: const TextStyle(color: Color(0xFF2B2E81)),
                   filled: true,
@@ -143,8 +165,6 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
             const SizedBox(height: 25),
-
-            // Login Button
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: InkWell(
@@ -156,10 +176,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     color: const Color(0xFF2B2E81),
                     borderRadius: BorderRadius.circular(15),
                   ),
-                  child: const Center(
+                  child: Center(
                     child: Text(
-                      "Login",
-                      style: TextStyle(
+                      AppLocalizations.of(context)!.login,
+                      style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
                         color: Colors.white,
@@ -170,7 +190,6 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
             const SizedBox(height: 20),
-            // OR
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: Row(
@@ -181,7 +200,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 15.0),
                     child: Text(
-                      "OR",
+                      l10n.or,
                       style: TextStyle(
                         color: Colors.grey[600],
                         fontWeight: FontWeight.bold,
@@ -196,7 +215,6 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
             const SizedBox(height: 20),
-            // Google text
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: GestureDetector(
@@ -219,9 +237,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         fit: BoxFit.contain,
                       ),
                       const SizedBox(width: 10),
-                      const Text(
-                        "Continue with Google",
-                        style: TextStyle(
+                      Text(
+                        l10n.continueWithGoogle,
+                        style: const TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
                           color: Color(0xFF2B2E81),
@@ -232,9 +250,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
             ),
-
             const SizedBox(height: 20),
-            // Apple text
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: GestureDetector(
@@ -252,8 +268,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     children: [
                       const Icon(Icons.apple, size: 28, color: Colors.black),
                       const SizedBox(width: 10),
-                      const Text(
-                        "Continue with Apple",
+                      Text(
+                        l10n.continueWithApple,
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
@@ -266,20 +282,19 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
             const SizedBox(height: 20),
-            // sign up
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text(
-                  "Don't have an account?",
+                Text(
+                  l10n.dontHaveAccount,
                   style: TextStyle(color: Colors.grey),
                 ),
                 TextButton(
                   onPressed: () {
                     Navigator.pushNamed(context, '/signup');
                   },
-                  child: const Text(
-                    "Sign Up",
+                  child: Text(
+                    l10n.signUp,
                     style: TextStyle(
                       color: Color(0xFF2B2E81),
                       fontWeight: FontWeight.w600,

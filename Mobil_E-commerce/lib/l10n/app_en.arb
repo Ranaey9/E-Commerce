@@ -1,0 +1,12 @@
+{
+  "search": "Search ...",
+  "login": "Login",
+  "email": "E-mail",
+  "password": "Password",
+  "or": "OR",
+  "continueWithGoogle": "Continue with Google",
+  "continueWithApple": "Continue with Apple",
+  "dontHaveAccount": "Don't have an account?",
+  "signUp": "Sign Up",
+  "errorEmptyFields": "Please enter your email and password."
+}
