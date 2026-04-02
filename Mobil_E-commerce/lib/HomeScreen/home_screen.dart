@@ -48,17 +48,24 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsetsGeometry.symmetric(
-              horizontal: 15,
-              vertical: 10,
-            ),
-            child: Container(
-              height: 140,
-              decoration: BoxDecoration(
-                color: Colors.grey[200],
-                borderRadius: BorderRadius.circular(15),
-              ),
+          Expanded(
+            child: ListView(
+              children: [
+                for (int i = 0; i < 7; i++)
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 15,
+                      vertical: 10,
+                    ),
+                    child: Container(
+                      height: 200, 
+                      decoration: BoxDecoration(
+                        color: Colors.grey[200],
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                    ),
+                  ),
+              ],
             ),
           ),
         ],
@@ -81,10 +88,6 @@ class _HomeScreenState extends State<HomeScreen> {
               currentIndex: 0,
               items: const [
                 BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.grid_view_rounded),
-                  label: '',
-                ),
                 BottomNavigationBarItem(icon: Icon(Icons.favorite), label: ''),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.local_mall_outlined),
