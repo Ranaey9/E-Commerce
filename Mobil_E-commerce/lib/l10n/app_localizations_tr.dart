@@ -58,4 +58,43 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get alreadyHaveAccount => 'Zaten bir hesabınız var mı?';
+
+  @override
+  String get clothing => 'Giyim';
+
+  @override
+  String get outerwear => 'Dış Giyim';
+
+  @override
+  String get shoes => 'Ayakkabı';
+
+  @override
+  String get bags => 'Çanta';
+
+  @override
+  String get lingerie => 'İç Giyim';
+
+  @override
+  String get cosmetics => 'Kozmetik';
+
+  @override
+  String get dresses => 'Elbise';
+
+  @override
+  String get tshirts => 'T-Shirt';
+
+  @override
+  String get pants => 'Pantolon & Jean';
+
+  @override
+  String get watches => 'Saat';
+
+  @override
+  String get sportswear => 'Spor Giyim';
+
+  @override
+  String get women => 'Kadın';
+
+  @override
+  String get men => 'Erkek';
 }

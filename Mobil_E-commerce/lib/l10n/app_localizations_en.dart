@@ -58,4 +58,43 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get alreadyHaveAccount => 'Already have an account?';
+
+  @override
+  String get clothing => 'Clothing';
+
+  @override
+  String get outerwear => 'Outerwear';
+
+  @override
+  String get shoes => 'Shoes';
+
+  @override
+  String get bags => 'Bags';
+
+  @override
+  String get lingerie => 'Lingerie';
+
+  @override
+  String get cosmetics => 'Cosmetics';
+
+  @override
+  String get dresses => 'Dresses';
+
+  @override
+  String get tshirts => 'T-Shirts';
+
+  @override
+  String get pants => 'Pants & Jeans';
+
+  @override
+  String get watches => 'Watches';
+
+  @override
+  String get sportswear => 'Sportswear';
+
+  @override
+  String get women => 'Women';
+
+  @override
+  String get men => 'Men';
 }

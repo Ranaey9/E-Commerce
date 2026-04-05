@@ -15,5 +15,18 @@
   "createAccount": "Create account",
   "name": "Name",
   "surname": "Surname",
-  "alreadyHaveAccount": "Already have an account?"
+  "alreadyHaveAccount": "Already have an account?",
+  "clothing": "Clothing",
+  "outerwear": "Outerwear",
+  "shoes": "Shoes",
+  "bags": "Bags",
+  "lingerie": "Lingerie",
+  "cosmetics": "Cosmetics",
+  "dresses": "Dresses",
+  "tshirts": "T-Shirts",
+  "pants": "Pants & Jeans",
+  "watches": "Watches",
+  "sportswear": "Sportswear",
+  "women": "Women",
+  "men": "Men"
 }

@@ -199,6 +199,84 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Already have an account?'**
   String get alreadyHaveAccount;
+
+  /// No description provided for @clothing.
+  ///
+  /// In en, this message translates to:
+  /// **'Clothing'**
+  String get clothing;
+
+  /// No description provided for @outerwear.
+  ///
+  /// In en, this message translates to:
+  /// **'Outerwear'**
+  String get outerwear;
+
+  /// No description provided for @shoes.
+  ///
+  /// In en, this message translates to:
+  /// **'Shoes'**
+  String get shoes;
+
+  /// No description provided for @bags.
+  ///
+  /// In en, this message translates to:
+  /// **'Bags'**
+  String get bags;
+
+  /// No description provided for @lingerie.
+  ///
+  /// In en, this message translates to:
+  /// **'Lingerie'**
+  String get lingerie;
+
+  /// No description provided for @cosmetics.
+  ///
+  /// In en, this message translates to:
+  /// **'Cosmetics'**
+  String get cosmetics;
+
+  /// No description provided for @dresses.
+  ///
+  /// In en, this message translates to:
+  /// **'Dresses'**
+  String get dresses;
+
+  /// No description provided for @tshirts.
+  ///
+  /// In en, this message translates to:
+  /// **'T-Shirts'**
+  String get tshirts;
+
+  /// No description provided for @pants.
+  ///
+  /// In en, this message translates to:
+  /// **'Pants & Jeans'**
+  String get pants;
+
+  /// No description provided for @watches.
+  ///
+  /// In en, this message translates to:
+  /// **'Watches'**
+  String get watches;
+
+  /// No description provided for @sportswear.
+  ///
+  /// In en, this message translates to:
+  /// **'Sportswear'**
+  String get sportswear;
+
+  /// No description provided for @women.
+  ///
+  /// In en, this message translates to:
+  /// **'Women'**
+  String get women;
+
+  /// No description provided for @men.
+  ///
+  /// In en, this message translates to:
+  /// **'Men'**
+  String get men;
 }
 
 class _AppLocalizationsDelegate

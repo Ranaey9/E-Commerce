@@ -1,5 +1,8 @@
+import 'dart:math';
+
 import 'package:e_commerce/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
+import 'widgets/category_list.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -9,26 +12,97 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  bool isWomanSelected = true;
+
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+
     return Scaffold(
       backgroundColor: Colors.white,
-      drawer: const Drawer(),
+      drawer: SizedBox(
+        width: MediaQuery.of(context).size.width * 0.75,
+        child: Drawer(
+          backgroundColor: Colors.white,
+          elevation: 0,
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+              topRight: Radius.circular(30),
+              bottomRight: Radius.circular(30),
+            ),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 80),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 25),
+                child: Text(
+                  "Shop Store",
+                  style: TextStyle(
+                    fontSize: 26,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF2B2E81),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 35),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                child: Row(
+                  children: [
+                    GestureDetector(
+                      onTap: () => setState(() => isWomanSelected = true),
+                      child: Text(
+                        l10n.women,
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: isWomanSelected
+                              ? const Color(0xFF2B2E81)
+                              : Colors.grey,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 30),
+                    GestureDetector(
+                      onTap: () => setState(() => isWomanSelected = false),
+                      child: Text(
+                        l10n.men,
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: !isWomanSelected
+                              ? const Color(0xFF2B2E81)
+                              : Colors.grey,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 10),
+              const Divider(indent: 25, endIndent: 25, height: 1),
+              CategoryList(isWoman: isWomanSelected),
+              const Spacer(),
+              const SizedBox(height: 30),
+            ],
+          ),
+        ),
+      ),
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
         leading: Builder(
           builder: (context) => IconButton(
-            onPressed: () {
-              Scaffold.of(context).openDrawer();
-            },
+            onPressed: () => Scaffold.of(context).openDrawer(),
             icon: const Icon(Icons.menu, color: Colors.black, size: 30),
           ),
         ),
         actions: [
           IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.notifications, color: Colors.black),
+            icon: const Icon(Icons.notifications_none, color: Colors.black),
             iconSize: 30,
           ),
           const SizedBox(width: 10),
@@ -41,22 +115,23 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Container(
               height: 50,
               decoration: BoxDecoration(
-                color: Colors.grey[200],
+                color: const Color(0xFFF5F5F7),
                 borderRadius: BorderRadius.circular(15),
               ),
               child: TextField(
                 decoration: InputDecoration(
-                  hintText: AppLocalizations.of(context)!.search,
+                  hintText: l10n.search,
                   border: InputBorder.none,
                   prefixIcon: const Icon(Icons.search, color: Colors.grey),
-                  contentPadding: const EdgeInsets.symmetric(vertical: 15),
+                  contentPadding: const EdgeInsets.symmetric(vertical: 12),
                 ),
               ),
             ),
           ),
           Expanded(
             child: ListView.builder(
-              itemCount: 7,
+              padding: const EdgeInsets.only(top: 10),
+              itemCount: 6,
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.symmetric(
@@ -64,10 +139,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     vertical: 10,
                   ),
                   child: Container(
-                    height: 200,
+                    height: 180,
                     decoration: BoxDecoration(
-                      color: Colors.grey[200],
-                      borderRadius: BorderRadius.circular(15),
+                      color: const Color(0xFFF5F5F7),
+                      borderRadius: BorderRadius.circular(20),
                     ),
                   ),
                 );
@@ -75,36 +150,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
         ],
-      ),
-      bottomNavigationBar: Container(
-        decoration: const BoxDecoration(
-          border: Border(top: BorderSide(color: Colors.grey, width: 0.5)),
-        ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const SizedBox(height: 8),
-            BottomNavigationBar(
-              elevation: 0,
-              backgroundColor: Colors.white,
-              type: BottomNavigationBarType.fixed,
-              selectedItemColor: const Color(0xFF2B2E81),
-              unselectedItemColor: Colors.grey,
-              currentIndex: 0,
-              showSelectedLabels: false,
-              showUnselectedLabels: false,
-              items: const [
-                BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
-                BottomNavigationBarItem(icon: Icon(Icons.favorite), label: ''),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.local_mall_outlined),
-                  label: '',
-                ),
-                BottomNavigationBarItem(icon: Icon(Icons.person), label: ''),
-              ],
-            ),
-          ],
-        ),
       ),
     );
   }

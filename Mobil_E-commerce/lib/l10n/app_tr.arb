@@ -15,5 +15,18 @@
   "createAccount": "Hesap oluşturun",
   "name": "Ad",
   "surname": "Soyad",
-  "alreadyHaveAccount": "Zaten bir hesabınız var mı?"
+  "alreadyHaveAccount": "Zaten bir hesabınız var mı?",
+  "clothing": "Giyim",
+  "outerwear": "Dış Giyim",
+  "shoes": "Ayakkabı",
+  "bags": "Çanta",
+  "lingerie": "İç Giyim",
+  "cosmetics": "Kozmetik",
+  "dresses": "Elbise",
+  "tshirts": "T-Shirt",
+  "pants": "Pantolon & Jean",
+  "watches": "Saat",
+  "sportswear": "Spor Giyim",
+  "women": "Kadın",
+  "men": "Erkek"
 }
