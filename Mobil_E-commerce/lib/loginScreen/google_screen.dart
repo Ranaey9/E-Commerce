@@ -28,10 +28,7 @@ class _GoogleScreenState extends State<GoogleScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.network(
-              'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1200px-Google_%22G%22_logo.svg.png',
-              height: 60,
-            ),
+            Image.asset('assets/images/google_logo.png', height: 50, width: 50),
             const SizedBox(height: 20),
             Text(
               l10n.signIn,
