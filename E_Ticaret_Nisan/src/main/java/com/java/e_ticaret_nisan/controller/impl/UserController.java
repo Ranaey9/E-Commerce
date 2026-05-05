@@ -6,7 +6,7 @@ import com.java.e_ticaret_nisan.entitiy.dto.dtoUser;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-@CrossOrigin(origins = "*")
+
 @RestController
 @RequestMapping("/rest/api/user")
 public class UserController implements IUserController {
