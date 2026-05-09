@@ -136,4 +136,18 @@ public class CartService implements ICartService {
         }
         return totalPrice;
     }
+
+    @Override
+    public String deletCart(Long userid) {
+        User user = userRepository.findById(userid)
+                .orElseThrow(()-> new RuntimeException("Kullanıcı bulunamadı"));
+        Cart cart = user.getCart();
+
+        if (cart==null){
+            throw new RuntimeException("Sepet zaten boş");
+        }
+        user.setCart(null);
+        cartRepository.delete(cart);
+        return "Silem başarılı";
+    }
 }

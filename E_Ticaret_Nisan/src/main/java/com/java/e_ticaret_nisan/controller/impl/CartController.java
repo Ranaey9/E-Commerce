@@ -44,5 +44,11 @@ public class CartController implements ICartController {
         return cartService.getCartTotalPrice(userid);
     }
 
+    @Override
+    @DeleteMapping("/deletCart/{userid}")
+    public String deletCart(@PathVariable(name = "userid") Long userid) {
+        return cartService.deletCart(userid);
+    }
+
 
 }

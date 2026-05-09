@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "urun")
+//urun product
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -25,6 +26,10 @@ public class Product {
     private double price;
 
     private int stock;
+
+    //Cinsiyet
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
 
     private String image;
 
