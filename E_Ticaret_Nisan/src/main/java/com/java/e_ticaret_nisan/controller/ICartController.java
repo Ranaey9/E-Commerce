@@ -11,6 +11,7 @@ public interface ICartController {
     public void removeProdactFromCart(Long userid, dtoCartItem cartItem);
     public List<dtoProductForAll> getCartByUserId(Long id);
     public double getCartTotalPrice(Long userid);
+    public String deletCart(Long userid);
 
 
 }
