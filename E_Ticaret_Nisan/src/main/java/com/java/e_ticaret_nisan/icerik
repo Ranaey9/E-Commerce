@@ -3,6 +3,8 @@ DİKKAT
 
 BİLGİ
     eğer sütun oluştuktan sonra özelliğini değiştirmek istiyorsan ubdate yerine creat yap knk
+    veri tabanı bağlantı hatası alıyosan gradle sekmesini refreshle
+    git pull , git add . , git commit -m "..." , git log q çıkış
 
 SEPET
     +addProductToCart (eğer seğet yoksa ürün eklerken sepeti de oluşturuyor)

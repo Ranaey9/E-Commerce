@@ -8,13 +8,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class dtoProductForAll {
+public class dtoProductResponse {
 
     private Long id;
     private String name;
     private double price;
     private int quantity;
     private String image;
-    private Double totalPrice;
     private Gender gender;
 }

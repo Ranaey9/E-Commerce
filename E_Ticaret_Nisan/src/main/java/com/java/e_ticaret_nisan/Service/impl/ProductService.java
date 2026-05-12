@@ -1,9 +1,11 @@
 package com.java.e_ticaret_nisan.Service.impl;
 
 import com.java.e_ticaret_nisan.Service.IProductService;
+import com.java.e_ticaret_nisan.entitiy.Gender;
 import com.java.e_ticaret_nisan.entitiy.Product;
 import com.java.e_ticaret_nisan.entitiy.dto.CreateProductDto;
 import com.java.e_ticaret_nisan.entitiy.dto.dtoProduct;
+import com.java.e_ticaret_nisan.entitiy.dto.dtoProductResponse;
 import com.java.e_ticaret_nisan.repository.IProcductRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,6 +60,23 @@ public class ProductService implements IProductService {
             dtoProduct dtoProduct = new dtoProduct();
             BeanUtils.copyProperties(product,dtoProduct);
             dtoList.add(dtoProduct);
+        }
+        return dtoList;
+    }
+
+    @Override
+    public List<dtoProductResponse> getProductByGender(Gender gender) {
+        List<Gender> genders = new ArrayList<>();
+        genders.add(gender);
+        if (!gender.equals(Gender.UNISEX)){
+            genders.add(Gender.UNISEX);
+        }
+        List<Product> products = procductRepository.findByGenderIn(genders);
+        List<dtoProductResponse> dtoList = new ArrayList<>();
+        for (Product product : products) {
+            dtoProductResponse dto = new dtoProductResponse();
+            BeanUtils.copyProperties(product,dto);
+            dtoList.add(dto);
         }
         return dtoList;
     }

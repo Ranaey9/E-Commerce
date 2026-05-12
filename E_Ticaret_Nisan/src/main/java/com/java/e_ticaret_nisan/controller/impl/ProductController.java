@@ -2,8 +2,10 @@ package com.java.e_ticaret_nisan.controller.impl;
 
 import com.java.e_ticaret_nisan.Service.IProductService;
 import com.java.e_ticaret_nisan.controller.IProductController;
+import com.java.e_ticaret_nisan.entitiy.Gender;
 import com.java.e_ticaret_nisan.entitiy.dto.CreateProductDto;
 import com.java.e_ticaret_nisan.entitiy.dto.dtoProduct;
+import com.java.e_ticaret_nisan.entitiy.dto.dtoProductResponse;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -40,5 +42,11 @@ public class ProductController implements IProductController {
     @GetMapping("/getAll")
     public List<dtoProduct> getAllProducts() {
         return productService.getAllProducts();
+    }
+
+    @Override
+    @GetMapping("/getProductByGender")
+    public List<dtoProductResponse> getProductByGender(@RequestParam @Valid Gender gender) {
+        return productService.getProductByGender(gender);
     }
 }
