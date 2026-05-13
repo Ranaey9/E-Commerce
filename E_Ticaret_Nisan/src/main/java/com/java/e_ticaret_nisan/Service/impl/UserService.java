@@ -1,6 +1,7 @@
 package com.java.e_ticaret_nisan.Service.impl;
 
 import com.java.e_ticaret_nisan.Service.IUserService;
+import com.java.e_ticaret_nisan.entitiy.Cart;
 import com.java.e_ticaret_nisan.entitiy.Role;
 import com.java.e_ticaret_nisan.entitiy.User;
 import com.java.e_ticaret_nisan.entitiy.dto.dtoUser;
@@ -28,6 +29,11 @@ public class UserService implements IUserService {
         User saveuser = new User();
         BeanUtils.copyProperties(user,saveuser);
         saveuser.setRole(Role.Customer);
+
+        Cart cart = new Cart();
+        cart.setUser(saveuser);
+        saveuser.setCart(cart);
+
         User save = userRepository.save(saveuser);
         dtoUser returnuser = new dtoUser();
 

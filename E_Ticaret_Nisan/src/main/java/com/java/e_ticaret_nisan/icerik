@@ -1,10 +1,17 @@
 DİKKAT
     enum kullanıyorsan başına @Enumrated(EnumType.String) yapmayı unutma
+    -orphanRemoval = true
+    -cascade = CascadeType.ALL
+    -jsonIgnore Ne bunler öğren
 
 BİLGİ
     eğer sütun oluştuktan sonra özelliğini değiştirmek istiyorsan ubdate yerine creat yap knk
     veri tabanı bağlantı hatası alıyosan gradle sekmesini refreshle
     git pull , git add . , git commit -m "..." , git log q çıkış
+
+    manuel kullanıcı girdiysen id sistemini düzenler
+    SELECT setval('"E-Ticaret".users_id_seq', (SELECT MAX(id) FROM "E-Ticaret".users));
+
 
 SEPET
     +addProductToCart (eğer seğet yoksa ürün eklerken sepeti de oluşturuyor)
@@ -15,9 +22,11 @@ SEPET
 
 ÜRÜN
     +Cinsiyet ekleme
+    +cinsiyete göre ürün çağırma(getProductByGender)
 
 
 GEÇMİŞ SAYFASI
-    -iki farklı sınıf geçmiş ürünler listesi total fiyat , grçmiştekiürün
-    -bunlar kullanıcı değişkeni olarak liste tutacak
+    +iki farklı sınıf geçmiş ürünler listesi total fiyat , grçmiştekiürün
+    +bunlar kullanıcı değişkeni olarak liste tutacak
+    +Order create metodu (Sepeti onaylama için bu kuallanılacak)
     -getALl metodu
