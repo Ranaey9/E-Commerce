@@ -1,5 +1,9 @@
+import 'dart:convert';
+
 import 'package:e_commerce/l10n/app_localizations.dart';
+import 'package:e_commerce/models/user_model.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -15,6 +19,50 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController _passwordController = TextEditingController();
 
   bool _isObscured = true;
+ Future<void> _registerUser() async {
+final url = Uri.parse("http://172.18.184.24:8080/rest/api/user/save");  final userModel = UserModel(
+    name: nameController.text.trim(),
+    surname: surnameController.text.trim(),
+    email: _emailController.text.trim(),
+    password: _passwordController.text,
+  );
+
+  try {
+    final response = await http.post(
+      url,
+      headers: {"Content-Type": "application/json"},
+      body: jsonEncode(userModel.toJson()),
+    );
+
+    if (response.statusCode == 200 || response.statusCode == 201) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text("Kayıt başarılı!")),
+        );
+        // Kayıt sonrası yönlendirme
+        Navigator.pushNamedAndRemoveUntil(
+          context,
+          '/HomeScreen',
+          (route) => false,
+        );
+      }
+    } else {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text("Sunucu Hatası: ${response.statusCode}")),
+        );
+      }
+    }
+  } catch (e) {
+    if (mounted) {
+      // Hatayı debug konsolunda görmek için print ekleyelim
+      debugPrint("Bağlantı detayı: $e");
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Bağlantı kurulamadı.")),
+      );
+    }
+  }
+}
 
   @override
   Widget build(BuildContext context) {
@@ -203,7 +251,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: InkWell(
-                onTap: () {},
+                onTap: _registerUser,
                 borderRadius: BorderRadius.circular(15),
                 child: Container(
                   height: 55,
