@@ -97,4 +97,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get men => 'Men';
+
+  @override
+  String get favorites => 'My Favorites';
+
+  @override
+  String get cart => 'My Cart';
+
+  @override
+  String get profile => 'My Profile';
 }

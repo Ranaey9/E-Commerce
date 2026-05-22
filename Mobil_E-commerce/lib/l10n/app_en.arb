@@ -28,5 +28,8 @@
   "watches": "Watches",
   "sportswear": "Sportswear",
   "women": "Women",
-  "men": "Men"
+  "men": "Men",
+  "favorites": "My Favorites",
+  "cart": "My Cart",
+  "profile": "My Profile"
 }

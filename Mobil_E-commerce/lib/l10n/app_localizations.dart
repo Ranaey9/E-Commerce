@@ -277,6 +277,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Men'**
   String get men;
+
+  /// No description provided for @favorites.
+  ///
+  /// In en, this message translates to:
+  /// **'My Favorites'**
+  String get favorites;
+
+  /// No description provided for @cart.
+  ///
+  /// In en, this message translates to:
+  /// **'My Cart'**
+  String get cart;
+
+  /// No description provided for @profile.
+  ///
+  /// In en, this message translates to:
+  /// **'My Profile'**
+  String get profile;
 }
 
 class _AppLocalizationsDelegate

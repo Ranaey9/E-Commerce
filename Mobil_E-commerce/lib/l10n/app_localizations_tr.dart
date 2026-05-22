@@ -97,4 +97,13 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get men => 'Erkek';
+
+  @override
+  String get favorites => 'Favorilerim';
+
+  @override
+  String get cart => 'Sepetim';
+
+  @override
+  String get profile => 'Profilim';
 }
