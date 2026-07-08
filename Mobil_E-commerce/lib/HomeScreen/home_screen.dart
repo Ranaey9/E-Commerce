@@ -170,6 +170,14 @@ class _HomeScreenState extends State<HomeScreen>
             icon: const Icon(Icons.notifications_none, color: Colors.black),
             iconSize: 30,
           ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.settings,
+              color: Color.fromARGB(255, 32, 31, 31),
+            ),
+            iconSize: 30,
+          ),
           const SizedBox(width: 10),
         ],
       ),
