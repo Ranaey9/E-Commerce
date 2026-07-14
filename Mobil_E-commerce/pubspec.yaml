@@ -30,8 +30,8 @@ flutter_launcher_icons:
   aadaptive_icon_background: "#FFFFFF"
   adaptive_icon_foreground: "assets/images/logo.png"
 flutter:
-  generate: true 
   uses-material-design: true
+  generate: true 
 
   assets:
     - assets/images/logo.png
