@@ -106,4 +106,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get profile => 'My Profile';
+
+  @override
+  String get errorInvalidEmail => 'Please enter a valid email address.';
 }

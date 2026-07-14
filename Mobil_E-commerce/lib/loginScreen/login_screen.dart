@@ -19,9 +19,19 @@ class _LoginScreenState extends State<LoginScreen> {
     String email = _emailController.text.trim();
     String password = _passwordController.text.trim();
 
+    final RegExp emailRegex = RegExp(
+      r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+",
+    );
+
     if (email.isEmpty || password.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(AppLocalizations.of(context)!.errorEmptyFields)),
+      );
+    } else if (!emailRegex.hasMatch(email)) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(AppLocalizations.of(context)!.errorInvalidEmail),
+        ),
       );
     } else {
       Navigator.pushNamed(context, '/HomeScreen');
@@ -64,20 +74,16 @@ class _LoginScreenState extends State<LoginScreen> {
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
-            physics:
-                const ClampingScrollPhysics(), 
+            physics: const ClampingScrollPhysics(),
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 10),
               child: Column(
-                mainAxisAlignment:
-                    MainAxisAlignment.center, 
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset(
                     "assets/images/logo.png",
-                    width:
-                        screenWidth * 0.30, 
-                    height:
-                        100, 
+                    width: screenWidth * 0.30,
+                    height: 100,
                     fit: BoxFit.contain,
                   ),
                   const SizedBox(height: 10),
@@ -90,8 +96,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   const SizedBox(height: 30),
-
-                  // E-posta alanı
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25.0),
                     child: TextField(
@@ -128,8 +132,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   const SizedBox(height: 15),
-
-                  // Şifre alanı
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25.0),
                     child: TextField(
@@ -178,8 +180,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   const SizedBox(height: 20),
-
-                  // Giriş Butonu
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25.0),
                     child: InkWell(
@@ -205,8 +205,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   const SizedBox(height: 15),
-
-                  // "Veya" Ayırıcı
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25.0),
                     child: Row(
@@ -238,8 +236,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   const SizedBox(height: 15),
-
-                  // Google ile Devam Et
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25.0),
                     child: GestureDetector(
@@ -274,8 +270,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   const SizedBox(height: 15),
-
-                  // Apple ile Devam Et
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25.0),
                     child: GestureDetector(
@@ -309,8 +303,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   const SizedBox(height: 15),
-
-                  // Kayıt Ol Satırı
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

@@ -31,5 +31,6 @@
   "men": "Erkek",
   "favorites": "Favorilerim",
   "cart": "Sepetim",
-  "profile": "Profilim"
-}
+  "profile": "Profilim",
+  "errorInvalidEmail": "Lütfen geçerli bir e-posta adresi giriniz."
+ }

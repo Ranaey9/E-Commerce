@@ -31,5 +31,6 @@
   "men": "Men",
   "favorites": "My Favorites",
   "cart": "My Cart",
-  "profile": "My Profile"
+  "profile": "My Profile",
+  "errorInvalidEmail": "Please enter a valid email address."
 }

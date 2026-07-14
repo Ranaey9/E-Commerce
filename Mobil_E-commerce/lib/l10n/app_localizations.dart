@@ -295,6 +295,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'My Profile'**
   String get profile;
+
+  /// No description provided for @errorInvalidEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a valid email address.'**
+  String get errorInvalidEmail;
 }
 
 class _AppLocalizationsDelegate
