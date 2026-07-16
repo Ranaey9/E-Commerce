@@ -65,7 +65,7 @@ class ProfileScreen extends StatelessWidget {
                       ),
                       SizedBox(height: 4),
                       Text(
-                        "rana@example.com",
+                        "name@example.com",
                         style: TextStyle(fontSize: 14, color: Colors.grey),
                       ),
                     ],
@@ -122,7 +122,7 @@ class ProfileScreen extends StatelessWidget {
                     onTap: () {
                       Navigator.pushNamedAndRemoveUntil(
                         context,
-                        '/LoginScreen',
+                        '/',
                         (route) => false,
                       );
                     },
