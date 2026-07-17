@@ -32,5 +32,14 @@
   "favorites": "My Favorites",
   "cart": "My Cart",
   "profile": "My Profile",
-  "errorInvalidEmail": "Please enter a valid email address."
+  "errorInvalidEmail": "Please enter a valid email address.",
+  "favorites": "My Favorites",
+  "cart": "My Cart",
+  "profile": "My Profile",
+  "errorInvalidEmail": "Please enter a valid email address.",
+  "myOrders": "My Orders",
+  "myAddresses": "My Addresses",
+  "myCards": "My Cards",
+  "settings": "Settings",
+  "logout": "Log Out"
 }
