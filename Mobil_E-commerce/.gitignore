@@ -50,3 +50,4 @@ build/windows/
 /coverage/
 app.*.symbols
 app.*.map.json
+lib/l10n/app_localizations*.dart
