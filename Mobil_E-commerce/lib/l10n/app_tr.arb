@@ -32,5 +32,14 @@
   "favorites": "Favorilerim",
   "cart": "Sepetim",
   "profile": "Profilim",
-  "errorInvalidEmail": "Lütfen geçerli bir e-posta adresi giriniz."
+  "errorInvalidEmail": "Lütfen geçerli bir e-posta adresi giriniz.",
+  "favorites": "Favorilerim",
+  "cart": "Sepetim",
+  "profile": "Profilim",
+  "errorInvalidEmail": "Lütfen geçerli bir e-posta adresi giriniz.",
+  "myOrders": "Siparişlerim",
+  "myAddresses": "Adres Bilgilerim",
+  "myCards": "Kayıtlı Kartlarım",
+  "settings": "Ayarlar",
+  "logout": "Çıkış Yap"
  }

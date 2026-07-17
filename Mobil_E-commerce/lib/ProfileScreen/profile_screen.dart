@@ -56,7 +56,7 @@ class ProfileScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Rana Ayoub",
+                        "name",
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
@@ -92,31 +92,31 @@ class ProfileScreen extends StatelessWidget {
                 children: [
                   _buildProfileMenuItem(
                     icon: Icons.shopping_bag_outlined,
-                    title: "Siparişlerim",
+                    title: l10n.myOrders,
                     onTap: () {},
                   ),
                   const Divider(height: 1, indent: 55, endIndent: 20),
                   _buildProfileMenuItem(
                     icon: Icons.location_on_outlined,
-                    title: "Adres Bilgilerim",
+                    title: l10n.myAddresses,
                     onTap: () {},
                   ),
                   const Divider(height: 1, indent: 55, endIndent: 20),
                   _buildProfileMenuItem(
                     icon: Icons.credit_card_outlined,
-                    title: "Kayıtlı Kartlarım",
+                    title: l10n.myCards,
                     onTap: () {},
                   ),
                   const Divider(height: 1, indent: 55, endIndent: 20),
                   _buildProfileMenuItem(
                     icon: Icons.settings_outlined,
-                    title: "Ayarlar",
+                    title: l10n.settings,
                     onTap: () {},
                   ),
                   const Divider(height: 1, indent: 55, endIndent: 20),
                   _buildProfileMenuItem(
                     icon: Icons.logout_outlined,
-                    title: "Çıkış Yap",
+                    title: l10n.logout,
                     iconColor: Colors.red,
                     textColor: Colors.red,
                     onTap: () {
